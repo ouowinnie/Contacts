@@ -1,7 +1,14 @@
 package com.example.contacts
 
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.view.View
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contacts.databinding.ActivityMainBinding
@@ -9,6 +16,8 @@ import com.example.contacts.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    val CALL_REQUEST_CODE = 1;
+    var telNum: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,5 +45,14 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val decoration = AddressAdapterDecoration()
         recyclerView.addItemDecoration(decoration)
+
+        adapter.itemClick = object : MyAdapter.ItemClick {
+            override fun onClick(view: View, position: Int) {
+                val name: String = dataList[position].name
+                val number: String = dataList[position].number
+                val intnet = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
+                startActivity(intnet)
+            }
+        }
     }
 }
