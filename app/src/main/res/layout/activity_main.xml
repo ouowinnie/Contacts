@@ -15,4 +15,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/articleBtn"
+        android:text="LG U+ 기사보기"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

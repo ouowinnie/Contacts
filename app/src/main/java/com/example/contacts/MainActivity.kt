@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
                 val item = dataList[position]
                 val number: String = dataList[position].number
                 val intnet = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
-                Log.d("MyAdapter", "Favorite clicked at position: $item")
                 startActivity(intnet)
             }
         }
@@ -58,9 +57,13 @@ class MainActivity : AppCompatActivity() {
             override fun onFavoriteClick(view: View, position: Int) {
                 val item = dataList[position]
                 item.toggleFavorite()
-                Log.d("MyAdapter", "Favorite clicked at position: $item")
                 adapter.notifyItemChanged(position)
             }
+        }
+
+        binding.articleBtn.setOnClickListener {
+            val intent = Intent(this,ArticleActivity::class.java)
+            startActivity(intent)
         }
     }
 }
