@@ -1,6 +1,6 @@
 # 😏Contacts (연락처 앱)
 #### 리사이클러뷰로 제작된 연락처 앱
-#### [blog] 🔗 <https://velog.io/@ouowinnie/contactsApp>
+#### [연락처앱 blog] 🔗 <https://velog.io/@ouowinnie/contactsApp>
 
 <div><h3>✔ 별 아이콘 클릭 시 즐겨찾기 토글, 전화번호 클릭 시 해당 번호로 전화발신 구현</h3></div>
 
